@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h1 {
+    color: #5e9ca0;
+    text-align: center;
+}
+.bgimage {
+    background-image: url('/image/crashed-airplane.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.start-btn {
+    margin-top:  50px;
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    text-decoration: none;
+    color: #0077cc;
+}
