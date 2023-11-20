@@ -5,12 +5,21 @@ p {
     padding-left: 20px;
     padding-right: 20px;
 }
+fieldset {
+    font-size: 22px;
+}
 h1 {
     color: #5e9ca0;
     text-align: center;
 }
 .bgimage {
     background-image: url('/image/crashed-airplane.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.gamebgimage {
+    background-image: url('/image/scene-1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,4 +31,22 @@ h1 {
     font-size: 34px;
     text-decoration: none;
     color: #0077cc;
+}
+.choose-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top:  20px;
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    text-decoration: none;
+    color: slateblue;
+}
+.option-rows {
+    padding-bottom: 20px;
+}
+.option-label {
+    padding-bottom: 25px;
 }
