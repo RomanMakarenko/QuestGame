@@ -28,7 +28,7 @@
     <p>
         Вам пощасливилось вижити в цій страшній авіатрощі...
     </p>
-    <a class="btn start-btn" href="game">ПОЧАТИ</a>
+    <a class="btn start-btn" href="game?selectedPath=1">ПОЧАТИ</a>
 </div>
 </body>
 </html>
