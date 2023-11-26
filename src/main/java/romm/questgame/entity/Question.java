@@ -11,5 +11,5 @@ import java.util.List;
 public class Question {
     private String questionText;
     private int questionLevel;
-    private HashMap<Integer, String> answerOptions;
+    private HashMap<String, String> answerOptions;
 }
