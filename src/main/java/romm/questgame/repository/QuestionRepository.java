@@ -31,6 +31,9 @@ public class QuestionRepository {
 
     public Question getQuestion(int questionNumber) {
         return storage.get(questionNumber);
+    }
 
+    public HashMap<Integer, Question> getQuestions() {
+        return storage;
     }
 }
