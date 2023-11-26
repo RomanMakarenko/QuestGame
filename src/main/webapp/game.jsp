@@ -22,12 +22,22 @@
     <h1>Jungle Quest</h1>
     <form method="get">
         <fieldset>
-            <legend class="option-label"><%= hashMap.get(questionNumber).getQuestionText() %></legend>
-            <% for (java.util.Map.Entry<String, String> entry : hashMap.get(questionNumber).getAnswerOptions().entrySet()) { %>
-            <div class="option-rows">
-                <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
-                <label><%= entry.getValue() %></label>
-            </div>
+            <% if  (hashMap.get(questionNumber) != null) { %>
+                <legend class="option-label"><%= hashMap.get(questionNumber).getQuestionText() %></legend>
+                <% for (java.util.Map.Entry<String, String> entry : hashMap.get(questionNumber).getAnswerOptions().entrySet()) { %>
+                    <div class="option-rows">
+                        <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
+                        <label><%= entry.getValue() %></label>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <legend class="option-label"><%= hashMap.get("0").getQuestionText() %></legend>
+                <% for (java.util.Map.Entry<String, String> entry : hashMap.get("0").getAnswerOptions().entrySet()) { %>
+                    <div class="option-rows">
+                        <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
+                        <label><%= entry.getValue() %></label>
+                    </div>
+                <% } %>
             <% } %>
         </fieldset>
         <br>

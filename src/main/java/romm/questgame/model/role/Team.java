@@ -33,4 +33,8 @@ public class Team {
         System.out.println(problem);
         this.member.solve(problem.trim().toLowerCase());
     }
+
+    public int getTeamMembersCount() {
+        return teamMembers.size();
+    }
 }

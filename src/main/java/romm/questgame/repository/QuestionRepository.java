@@ -6,6 +6,10 @@ import java.util.HashMap;
 
 public class QuestionRepository {
     private static final HashMap<String, Question> storage = new HashMap<>() {{
+        put("0", new Question("Виявилось що ви були в зоні ядерних випробувань. Ядерний удар не залишив вам шансів.", 1, new HashMap<>() {{
+            put("1", "Почати заново");
+            put("2", "Закінчити");
+        }}));
         put("1", new Question("Страшніки кричать звідусіль, що робити?", 1, new HashMap<>() {{
             put("21", "Потрібно рятувати вцілілих, піти до хвоста літака");
             put("22", "Потрібно рятувати вцілілих, піти до носу літака");
