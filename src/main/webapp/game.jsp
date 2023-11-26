@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     java.util.HashMap<Integer, Question> hashMap = (HashMap<Integer, Question>) request.getAttribute("questions");
-    Integer questionNumber = Integer.parseInt(request.getParameter("selectedPath"));
+    String questionNumber = request.getParameter("selectedPath");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,11 +20,10 @@
 
 <div class="card">
     <h1>Jungle Quest</h1>
-    <% if (true) { %>
     <form method="get">
         <fieldset>
             <legend class="option-label"><%= hashMap.get(questionNumber).getQuestionText() %></legend>
-            <% for (java.util.Map.Entry<Integer, String> entry : hashMap.get(questionNumber).getAnswerOptions().entrySet()) { %>
+            <% for (java.util.Map.Entry<String, String> entry : hashMap.get(questionNumber).getAnswerOptions().entrySet()) { %>
             <div class="option-rows">
                 <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
                 <label><%= entry.getValue() %></label>
@@ -34,7 +33,6 @@
         <br>
         <button class="btn choose-btn" id="submitBtn">ОБРАТИ</button>
     </form>
-    <% } %>
 </div>
 </body>
 </html>
