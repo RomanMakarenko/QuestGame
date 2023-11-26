@@ -1,9 +1,7 @@
-<%@ page import="java.util.HashMap" %>
 <%@ page import="romm.questgame.entity.Question" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    java.util.HashMap<Integer, Question> hashMap = (HashMap<Integer, Question>) request.getAttribute("questions");
-    String questionNumber = request.getParameter("selectedPath");
+    Question question = (Question) request.getAttribute("question");
 %>
 <!DOCTYPE html>
 <html>
@@ -22,22 +20,12 @@
     <h1>Jungle Quest</h1>
     <form method="get">
         <fieldset>
-            <% if  (hashMap.get(questionNumber) != null) { %>
-                <legend class="option-label"><%= hashMap.get(questionNumber).getQuestionText() %></legend>
-                <% for (java.util.Map.Entry<String, String> entry : hashMap.get(questionNumber).getAnswerOptions().entrySet()) { %>
-                    <div class="option-rows">
-                        <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
-                        <label><%= entry.getValue() %></label>
-                    </div>
-                <% } %>
-            <% } else { %>
-                <legend class="option-label"><%= hashMap.get("0").getQuestionText() %></legend>
-                <% for (java.util.Map.Entry<String, String> entry : hashMap.get("0").getAnswerOptions().entrySet()) { %>
-                    <div class="option-rows">
-                        <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
-                        <label><%= entry.getValue() %></label>
-                    </div>
-                <% } %>
+            <legend class="option-label"><%= question.getQuestionText() %></legend>
+            <% for (java.util.Map.Entry<String, String> entry : question.getAnswerOptions().entrySet()) { %>
+                <div class="option-rows">
+                    <input type="radio" name="selectedPath" value=<%= entry.getKey() %> checked/>
+                    <label><%= entry.getValue() %></label>
+                </div>
             <% } %>
         </fieldset>
         <br>
