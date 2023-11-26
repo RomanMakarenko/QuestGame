@@ -162,4 +162,12 @@ public class QuestionRepository {
     public HashMap<String, Question> getQuestions() {
         return storage;
     }
+
+    public Question getQuestion(String key) {
+        return storage.get(key);
+    }
+
+    public boolean isBranchExist(String key) {
+        return storage.get(key) != null;
+    }
 }
