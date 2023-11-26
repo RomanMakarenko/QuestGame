@@ -5,7 +5,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.w3c.dom.ls.LSOutput;
 import romm.questgame.repository.QuestionRepository;
 
 import java.io.IOException;
@@ -17,15 +16,5 @@ public class Game extends HttpServlet {
         QuestionRepository questionRepository = new QuestionRepository();
         request.setAttribute("questions", questionRepository.getQuestions());
         request.getRequestDispatcher("/game.jsp").forward(request, response);
-    }
-
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        String selectedOption = request.getParameter("selectedPath");
-//        System.out.println("Обраний варіант: " + selectedOption);
-//        response.setContentType("text/html");
-//    }
-
-    public void destroy() {
     }
 }
