@@ -49,6 +49,7 @@ public class GameTest {
         }});
         when(mockRequest.getParameter("selectedPath")).thenReturn(selectedPath);
         when(mockQuestionRepository.getQuestion(selectedPath)).thenReturn(mockQuestion);
+        mockRequest.setAttribute("question", new Question(mockQuestion.getQuestionText(), mockQuestion.getQuestionLevel(), mockQuestion.getAnswerOptions()));
         when(mockRequest.getRequestDispatcher("/game.jsp")).thenReturn(mockRequestDispatcher);
         gameServlet.doGet(mockRequest, mockResponse);
         verify(mockRequest).setAttribute("question", mockQuestion);
