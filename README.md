@@ -6,6 +6,8 @@
 - JSTL;
 - servlets - Based on the selectedPath from the QuestionRepository (HashMap<String, Question> storage), the next question in the branch is retrieved;
 - JUNIT 5 for cover by tests.
+<img width="1058" alt="tests" src="https://github.com/RomanMakarenko/QuestGame/assets/7659126/b687ed15-a2b7-4ebe-bbd4-ddf9bbfd5305">
+
 # QuestGame
 Your choice determines how the story will develop.
 Losing is not a reason to be upset. You can always start the game again
