@@ -16,8 +16,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer type="text/javascript" src="/solution.js"></script>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <title>Jungle Quest</title>
 </head>
