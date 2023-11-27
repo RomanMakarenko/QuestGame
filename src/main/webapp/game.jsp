@@ -2,6 +2,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     Question question = (Question) request.getAttribute("question");
+    Integer visitCount = (Integer) session.getAttribute("visitCount");
+    if (visitCount == null) {
+        visitCount = 1;
+    } else if (question.getQuestionLevel() == 1) {
+        visitCount++;
+    }
+    session.setAttribute("visitCount", visitCount);
 %>
 <!DOCTYPE html>
 <html>
@@ -30,6 +37,7 @@
         </fieldset>
         <br>
         <button class="btn choose-btn" id="submitBtn">ОБРАТИ</button>
+        <p>Ваша спроба пройти квест = <%= session.getAttribute("visitCount")%></p>
     </form>
 </div>
 </body>
